@@ -91,15 +91,22 @@ void renderStars() {
 void mouseClicked() {
        //triangle(20, 100, 20, 140, 60, 120);
        //rect(80, 100, 5, 40);
-       //rect(100, 100, 5, 40); 
-   
-   if(mouseX < 60 && mouseX > 20 && mouseY < 140 && mouseY > 100) {
+       //rect(100, 100, 5, 40);
+       //rect(20, 155, 40, 40);
+
+   if(mouseX < 60 && mouseX > 20 && mouseY < 140 && mouseY > 100 && fileSelected) {
+     eqBool = true; 
       song.play(); 
       file1.play();
     }
-    else if(mouseX < 105 && mouseX > 80 && mouseY < 140 && mouseY > 100) {
+    else if(mouseX < 105 && mouseX > 80 && mouseY < 140 && mouseY > 100 && fileSelected) {
+      eqBool = false; 
       song.pause(); 
       file1.pause();
+    }
+   else if(mouseX < 60 && mouseX > 20 && mouseY < 205 && mouseY > 155) {
+       eqBool = false; 
+      openFileChooser(); 
     }
     else {
        star.addXY(mouseX, mouseY);
